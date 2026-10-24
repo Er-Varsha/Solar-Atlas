@@ -1,0 +1,28 @@
+# Solar Atlas — Operational Workflow & Deployment Guide
+
+## 1. Local Development / Execution
+The web application integrates both Frontend and Backend into a single unified Python runtime:
+- Launch the full application (Frontend + Backend):
+  .venv\Scripts\python -m streamlit run frontend/app.py
+
+- Run the standalone verification & pipeline test script (optional):
+  .venv\Scripts\python scripts/demo.py
+
+- Run the automated test suite (14 pytest scenarios):
+  .venv\Scripts\python -m pytest tests/test_solar_atlas.py
+
+## 2. Cloud Deployment (Streamlit Community Cloud)
+1. Push this repository to GitHub:
+   git remote add origin https://github.com/<your-username>/<your-repo-name>.git
+   git push -u origin main
+
+2. Connect to https://share.streamlit.io:
+   - Repository: <your-username>/<your-repo-name>
+   - Branch: main
+   - Main file path: frontend/app.py
+   - Click "Deploy" (uses packages.txt and requirements.txt automatically)
+
+## 3. Containerized Deployment (Docker)
+- Build and run with volume persistence:
+  docker compose up -d --build
+- Access at: http://localhost:8501
