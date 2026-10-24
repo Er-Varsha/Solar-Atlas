@@ -1,0 +1,13 @@
+site_name,latitude,longitude,observation_date,ghi_kwh_m2_day,dni_kwh_m2_day,dhi_kwh_m2_day,sunshine_duration_hours,rooftop_area_m2,suitability_score,data_status
+Synthetic Site 1 (DEMO),28.79,79.012,2026-03-15,4.9,3.53,1.37,5.0,120.0,82.0,"DEMONSTRATION DATA (synthetic, not measured)"
+Synthetic Site 2 (DEMO),28.792,79.024,2026-03-15,5.12,3.69,1.43,5.3,85.0,67.0,"DEMONSTRATION DATA (synthetic, not measured)"
+Synthetic Site 3 (DEMO),28.794,79.03,2026-03-15,5.34,3.84,1.5,5.7,160.0,91.0,"DEMONSTRATION DATA (synthetic, not measured)"
+Synthetic Site 4 (DEMO),28.797,79.008,2026-03-15,5.56,4.0,1.56,6.0,70.0,54.0,"DEMONSTRATION DATA (synthetic, not measured)"
+Synthetic Site 5 (DEMO),28.798,79.022,2026-03-15,5.78,4.16,1.62,5.0,110.0,76.0,"DEMONSTRATION DATA (synthetic, not measured)"
+Synthetic Site 6 (DEMO),28.801,79.028,2026-03-15,4.9,3.53,1.37,5.3,145.0,88.0,"DEMONSTRATION DATA (synthetic, not measured)"
+Synthetic Site 7 (DEMO),28.804,79.014,2026-03-15,5.12,3.69,1.43,5.7,95.0,61.0,"DEMONSTRATION DATA (synthetic, not measured)"
+Synthetic Site 8 (DEMO),28.806,79.021,2026-03-15,5.34,3.84,1.5,6.0,180.0,95.0,"DEMONSTRATION DATA (synthetic, not measured)"
+Synthetic Site 9 (DEMO),28.809,79.03,2026-03-15,5.56,4.0,1.56,5.0,105.0,72.0,"DEMONSTRATION DATA (synthetic, not measured)"
+Synthetic Site 10 (DEMO),28.811,79.018,2026-03-15,5.78,4.16,1.62,5.3,135.0,84.0,"DEMONSTRATION DATA (synthetic, not measured)"
+Synthetic Site 11 (DEMO),28.813,79.026,2026-03-15,4.9,3.53,1.37,5.7,80.0,58.0,"DEMONSTRATION DATA (synthetic, not measured)"
+Synthetic Site 12 (DEMO),28.788,79.032,2026-03-15,5.12,3.69,1.43,6.0,155.0,90.0,"DEMONSTRATION DATA (synthetic, not measured)"

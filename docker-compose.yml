@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  solar-atlas:
+    build: .
+    container_name: solar_atlas_app
+    ports:
+      - "8501:8501"
+    restart: unless-stopped
+    volumes:
+      # Persist SQLite database and files
+      - solar_atlas_data:/app/data
+      # Persist ChromaDB vector indices
+      - solar_atlas_chroma:/app/chroma_db
+    environment:
+      - STREAMLIT_SERVER_PORT=8501
+      - STREAMLIT_SERVER_ADDRESS=0.0.0.0
+      - STREAMLIT_SERVER_HEADLESS=true
+
+volumes:
+  solar_atlas_data:
+  solar_atlas_chroma:

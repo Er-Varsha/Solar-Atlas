@@ -1,0 +1,460 @@
+/* =========================================================================
+   Solar Atlas Pro — Enterprise Geospatial Aerospace Design System
+   ========================================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-app: #070B14;
+  --bg-surface: #0D1322;
+  --bg-surface-elevated: #151D30;
+  --bg-card: rgba(13, 19, 34, 0.75);
+  --bg-card-hover: rgba(21, 29, 48, 0.9);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-medium: rgba(255, 255, 255, 0.14);
+  --border-accent: rgba(245, 158, 11, 0.45);
+  
+  --solar-amber: #F59E0B;
+  --solar-gold: #FBBF24;
+  --solar-glow: rgba(245, 158, 11, 0.25);
+  --solar-gradient: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+  
+  --cyber-cyan: #06B6D4;
+  --cyber-blue: #38BDF8;
+  --cyber-emerald: #10B981;
+  --cyber-violet: #8B5CF6;
+  
+  --text-primary: #F9FAFB;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+  
+  --radius-lg: 14px;
+  --radius-md: 10px;
+  --radius-sm: 6px;
+  
+  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.35);
+  --shadow-card: 0 10px 30px -5px rgba(0, 0, 0, 0.5), 0 0 1px 1px rgba(255, 255, 255, 0.05);
+  --shadow-glow: 0 0 25px rgba(245, 158, 11, 0.2);
+}
+
+/* Global resets & typography */
+html, body, [class*="st-"] {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  color: var(--text-primary);
+  background-color: var(--bg-app);
+}
+
+code, pre, .stCodeBlock, [data-testid="stCodeBlock"] {
+  font-family: 'JetBrains Mono', monospace !important;
+}
+
+/* Streamlit Container Optimization */
+.block-container {
+  padding-top: 1.5rem !important;
+  padding-bottom: 3.5rem !important;
+  max-width: 1440px !important;
+}
+
+/* -------------------------------------------------------------------------
+   Top Mission Control Bar
+   ------------------------------------------------------------------------- */
+.top-mission-bar {
+  background: linear-gradient(135deg, rgba(13, 19, 34, 0.95) 0%, rgba(7, 11, 20, 0.98) 100%);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: 1.2rem 1.6rem;
+  margin-bottom: 1.6rem;
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(16px);
+  position: relative;
+  overflow: hidden;
+}
+
+.top-mission-bar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #F59E0B 0%, #38BDF8 50%, #10B981 100%);
+}
+
+.mission-bar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.mission-title-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.mission-logo-symbol {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, #F59E0B 0%, #B45309 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.4);
+}
+
+.mission-title {
+  font-size: 1.7rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em;
+  margin: 0 !important;
+  background: linear-gradient(135deg, #FFFFFF 30%, #FDE68A 70%, #F59E0B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.mission-subtitle {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.system-telemetry-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.telemetry-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+}
+
+.telemetry-chip.software {
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.35);
+  color: #34D399;
+}
+
+.telemetry-chip.satellite {
+  background: rgba(56, 189, 248, 0.12);
+  border-color: rgba(56, 189, 248, 0.35);
+  color: #7DD3FC;
+}
+
+.telemetry-chip.engine {
+  background: rgba(245, 158, 11, 0.12);
+  border-color: rgba(245, 158, 11, 0.35);
+  color: #FCD34D;
+}
+
+.status-pulsing-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #10B981;
+  box-shadow: 0 0 8px #10B981;
+  animation: pulseLight 1.8s infinite ease-in-out;
+}
+
+@keyframes pulseLight {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+/* -------------------------------------------------------------------------
+   High-Tech Executive KPI Metric Cards
+   ------------------------------------------------------------------------- */
+.kpi-card {
+  background: linear-gradient(145deg, rgba(13, 19, 34, 0.85) 0%, rgba(21, 29, 48, 0.6) 100%);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.25rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.25s ease-in-out;
+  box-shadow: var(--shadow-subtle);
+}
+
+.kpi-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow-glow);
+}
+
+.kpi-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--card-accent, var(--solar-gradient));
+}
+
+.kpi-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.kpi-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+}
+
+.kpi-icon {
+  font-size: 1.25rem;
+  opacity: 0.9;
+}
+
+.kpi-value {
+  font-size: 1.9rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+  margin-bottom: 0.25rem;
+}
+
+.kpi-subtext {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* -------------------------------------------------------------------------
+   Glassmorphic Interactive Cards
+   ------------------------------------------------------------------------- */
+.pro-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.4rem;
+  margin-bottom: 1.3rem;
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(16px);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pro-card:hover {
+  border-color: var(--border-medium);
+}
+
+.pro-card-title {
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* -------------------------------------------------------------------------
+   Sidebar Architecture
+   ------------------------------------------------------------------------- */
+section[data-testid="stSidebar"] {
+  background-color: #070B14 !important;
+  border-right: 1px solid var(--border-subtle) !important;
+}
+
+.sidebar-brand-container {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(13, 19, 34, 0.8) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: var(--radius-md);
+  padding: 1.1rem;
+  margin-bottom: 1.4rem;
+}
+
+.sidebar-title {
+  font-size: 1.18rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #FBBF24;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sidebar-nav-header {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin: 1.2rem 0 0.5rem 0.2rem;
+}
+
+/* -------------------------------------------------------------------------
+   Interactive Stepper for Pipelines
+   ------------------------------------------------------------------------- */
+.pipeline-step-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 1.2rem 0;
+  padding: 1rem;
+  background: rgba(13, 19, 34, 0.6);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+}
+
+.pipeline-step-node {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+.pipeline-step-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+  margin-bottom: 6px;
+}
+
+.pipeline-step-node.active .pipeline-step-badge {
+  background: var(--solar-gradient);
+  color: #000000;
+  border-color: var(--solar-amber);
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.4);
+}
+
+.pipeline-step-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+/* -------------------------------------------------------------------------
+   Streamlit Native Overrides
+   ------------------------------------------------------------------------- */
+
+/* Action Primary Buttons */
+.stButton > button[kind="primary"], .stButton > button:not([kind="secondary"]) {
+  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%) !important;
+  color: #000000 !important;
+  font-weight: 700 !important;
+  font-size: 0.94rem !important;
+  border-radius: var(--radius-md) !important;
+  border: none !important;
+  padding: 0.65rem 1.6rem !important;
+  box-shadow: 0 4px 16px 0 rgba(245, 158, 11, 0.35) !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.stButton > button[kind="primary"]:hover, .stButton > button:not([kind="secondary"]):hover {
+  background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 22px 0 rgba(245, 158, 11, 0.55) !important;
+  color: #000000 !important;
+}
+
+/* Secondary & Download Buttons */
+.stDownloadButton > button, .stButton > button[kind="secondary"] {
+  background: rgba(21, 29, 48, 0.8) !important;
+  color: #F3F4F6 !important;
+  border: 1px solid var(--border-medium) !important;
+  border-radius: var(--radius-md) !important;
+  font-weight: 600 !important;
+  padding: 0.6rem 1.2rem !important;
+  transition: all 0.2s ease !important;
+}
+
+.stDownloadButton > button:hover, .stButton > button[kind="secondary"]:hover {
+  background: rgba(30, 41, 59, 0.9) !important;
+  border-color: var(--cyber-blue) !important;
+  color: #FFFFFF !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Tabs */
+div[data-baseweb="tab-list"] {
+  background-color: rgba(13, 19, 34, 0.6) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: var(--radius-md) !important;
+  padding: 5px !important;
+  gap: 6px !important;
+}
+
+button[data-baseweb="tab"] {
+  border-radius: var(--radius-sm) !important;
+  font-size: 0.88rem !important;
+  font-weight: 600 !important;
+  color: var(--text-secondary) !important;
+  border: none !important;
+  padding: 8px 16px !important;
+  transition: all 0.2s ease !important;
+}
+
+button[data-baseweb="tab"][aria-selected="true"] {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.2) 0%, rgba(217, 119, 6, 0.1) 100%) !important;
+  color: #FBBF24 !important;
+  border-bottom: 2px solid var(--solar-amber) !important;
+}
+
+/* Inputs, Selectboxes & Number Inputs */
+div[data-baseweb="select"] > div,
+div[data-baseweb="input"] > div {
+  background-color: rgba(13, 19, 34, 0.8) !important;
+  border: 1px solid var(--border-medium) !important;
+  border-radius: var(--radius-sm) !important;
+  color: #FFFFFF !important;
+}
+
+div[data-baseweb="select"] > div:focus-within,
+div[data-baseweb="input"] > div:focus-within {
+  border-color: var(--solar-amber) !important;
+  box-shadow: 0 0 0 1px var(--solar-amber) !important;
+}
+
+/* Pydeck & Map containers */
+[data-testid="stDeckGlJsonChart"] {
+  border: 1px solid var(--border-medium) !important;
+  border-radius: var(--radius-lg) !important;
+  overflow: hidden !important;
+  box-shadow: var(--shadow-card) !important;
+}
+
+/* Expander */
+div[data-testid="stExpander"] {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: var(--radius-md) !important;
+  margin-bottom: 0.8rem !important;
+}
+
+/* Dataframe containers */
+div[data-testid="stDataFrame"] {
+  border: 1px solid var(--border-medium) !important;
+  border-radius: var(--radius-md) !important;
+  overflow: hidden !important;
+}
