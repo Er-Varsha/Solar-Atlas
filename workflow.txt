@@ -26,3 +26,8 @@ The web application integrates both Frontend and Backend into a single unified P
 - Build and run with volume persistence:
   docker compose up -d --build
 - Access at: http://localhost:8501
+
+## 4. One-Click Live Public Deployment
+- Automatically boot the server and generate a secure public HTTPS URL:
+  scripts\deploy_public.bat
+
